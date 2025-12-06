@@ -10,17 +10,16 @@ export default function Summary() {
     if (stored) setOrders(JSON.parse(stored));
   }, []);
 
-  const calc = (delivery: string) => {
-    const list = orders.filter(o => o.delivery === delivery);
-    const total = list.reduce((sum, o) => sum + o.amount, 0);
+  /*const __Calc = (delivery: string) => {
+  const list = orders.filter(o => o.delivery === delivery);
+  const total = list.reduce((sum, o) => sum + o.amount, 0);
 
-    return { 
-      count: list.length,
-      total
-    };
+  return { 
+    count: list.length,
+    total
   };
+};*/
 
-  // 📄 PDF Export هنا في مكانه الصحيح
   const exportPDF = () => {
     const doc = new jsPDF();
     doc.setFontSize(18);
